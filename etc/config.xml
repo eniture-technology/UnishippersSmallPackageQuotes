@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <UnishippersSmQuoteSetting>
+            <third>
+                <domesticServices>ND,ND4,ND5,SC,SC25,SC3,SG,SGR,SND,SND5,SSC</domesticServices>
+                <internationalServices>ZZ1,ZZ2,ZZ90,ZZ11</internationalServices>
+                <deliveryEstimateOptions>NO</deliveryEstimateOptions>
+                <enableCuttOff>0</enableCuttOff>
+                <enableCuttOff>0</enableCuttOff>
+                <onlyGndService>0</onlyGndService>
+            </third>
+        </UnishippersSmQuoteSetting>
+        <carriers>
+            <ENUnishippersSmpkg>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <price>0</price>
+                <model>Eniture\UnishippersSmallPackageQuotes\Model\Carrier\UnishippersSmpkgShipping</model>
+                <allowed_methods>ND,ND4,ND5,SC,SC25,SC3,SG,SGR,SND,SND5,SSC,ZZ1,ZZ2,ZZ90,ZZ11</allowed_methods>
+                <name>Fixed</name>
+                <title>Unishippers Small Package Quotes</title>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </ENUnishippersSmpkg>
+        </carriers>
+    </default>
+</config>

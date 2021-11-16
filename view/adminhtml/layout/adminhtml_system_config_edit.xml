@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="Eniture_UnishippersSmallPackageQuotes::js/unishippersSmCommon.js"/>
+        <link src="Eniture_UnishippersSmallPackageQuotes::js/unishippersSmTestConnection.js"/>
+        <link src="Eniture_UnishippersSmallPackageQuotes::js/unishippersSmWarehouse.js"/>
+        <link src="Eniture_UnishippersSmallPackageQuotes::js/unishippersSmDropship.js"/>
+        <link src="Eniture_UnishippersSmallPackageQuotes::js/unishippersSmRAD.js"/>
+        <link src="Eniture_UnishippersSmallPackageQuotes::js/tagsinput/unishippersSm-bootstrap-tagsinput.js"/>
+    </head>
+</page>

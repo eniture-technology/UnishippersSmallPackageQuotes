@@ -1,0 +1,28 @@
+<?php
+
+$planMsgDiv  = $block->unishippersSmPlanNotice();
+$connMsgDiv  = $block->unishippersSmConnMsg();
+?>
+<script>
+    require([ 'jquery', 'domReady!'], function($){
+            let carrierDiv = '#UnishippersSmConnSetting_first-head';
+            unishippersSmNotesToggleHandling($, '<?php /* @noEscape */ echo $connMsgDiv; ?>', '.unishipperssm-conn-setting-note', carrierDiv);
+            unishippersSmCurrentPlanNote($, '<?php /* @noEscape */ echo $planMsgDiv; ?>', carrierDiv);
+    });
+</script>
+<div class="pp-buttons-container">
+    <button class="primary" id="<?= /* @noEscape */ $block->getId() ?>" connAjaxUrl='<?php /* @noEscape */ echo $this->getAjaxCheckUrl() ?>'>
+        <span>
+            <span>
+                <span>
+                    <?= $block->escapeHtml($block->getButtonLabel()); ?>
+                </span>
+            </span>
+        </span>
+    </button>
+</div>
+
+<!-- Display Test Conn Response Message -->
+<div id="unishipperssm-conn-response" class="unishipperssm-conn-response"></div>
+
+

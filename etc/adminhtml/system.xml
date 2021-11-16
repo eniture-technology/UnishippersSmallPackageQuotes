@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Shipping
+ * @package    Eniture_UnishippersSmallPackageQuotes
+ * @author     Eniture Technologies
+ * @website    https://eniture.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="UnishippersSmallPackageQuotes" translate="label" sortOrder="10">
+            <label>Eniture - Unishippers Small Package Quotes</label>
+        </tab>
+        <section id="carriers" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="ENUnishippersSmpkg" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Eniture - Unishippers Small Package Quotes</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled For Checkout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+
+        <section id="UnishippersSmConnSetting" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Connection Settings</label>
+            <tab>UnishippersSmallPackageQuotes</tab>
+            <resource>Eniture_UnishippersSmallPackageQuotes::acl</resource>
+            <group id="first" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Connection Settings</label>
+                <field id="upsAccountNumber" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>UPS Account Number</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="username" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Username</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="password" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="unishippersCustomerNumber" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Unishippers Customer Number</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="unishippersRequestKey" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Request Key </label>
+                </field>
+                <field id="licenseKey" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Plugin License Key</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="testConnection" translate="label" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Eniture\UnishippersSmallPackageQuotes\Block\System\Config\TestConnection</frontend_model>
+                </field>
+            </group>
+        </section>
+
+        <section id="UnishippersSmWarehouse" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Warehouses</label>
+            <tab>UnishippersSmallPackageQuotes</tab>
+            <resource>Eniture_UnishippersSmallPackageQuotes::acl</resource>
+            <group id="second" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Warehouses</label>
+                <field id="warehouse" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Eniture\UnishippersSmallPackageQuotes\Block\System\Config\Warehouse</frontend_model>
+                </field>
+                <field id="dropship" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Eniture\UnishippersSmallPackageQuotes\Block\System\Config\Dropship</frontend_model>
+                </field>
+            </group>
+        </section>
+
+        <section id="UnishippersSmQuoteSetting" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Quote Settings</label>
+            <tab>UnishippersSmallPackageQuotes</tab>
+            <resource>Eniture_UnishippersSmallPackageQuotes::acl</resource>
+            <group id="third" translate="label" type="select" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Quote Settings</label>
+                <field id="domesticServices" translate="label" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Domestic Services</label>
+                    <source_model>Eniture\UnishippersSmallPackageQuotes\Model\Source\domesticServices</source_model>
+                </field>
+                <field id="internationalServices" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>International Services</label>
+                    <source_model>Eniture\UnishippersSmallPackageQuotes\Model\Source\internationalServices</source_model>
+                </field>
+                <field id="deliveryEstimateOptions" translate="label" type="select" sortOrder="3" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Delivery Estimate Options</label>
+                    <source_model>Eniture\UnishippersSmallPackageQuotes\Model\Source\deliveryEstimateOptions</source_model>
+                    <comment><![CDATA[Show Delivery Estimates With Shipping Services.]]></comment>
+                </field>
+                <field id="enableCuttOff" translate="label" type="select" sortOrder="4" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Cut Off Time &amp; Ship Date Offset</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="cutOffTime" translate="label" type="time" sortOrder="5" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Order Cut Off Time</label>
+                    <comment><![CDATA[Enter the cut off time (e.g. 2:00) for orders. Orders placed after this time will be quoted as shipping the next business day.]]></comment>
+                    <depends>
+                        <field id="enableCuttOff">1</field>
+                    </depends>
+                </field>
+                <field id="offsetDays" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Fulfilment Offset Days</label>
+                    <validate>validate-number validate-digits-range digits-range-1-20</validate>
+                    <comment><![CDATA[The number of days ship date needs to be moved to allow for the processing of the order.]]></comment>
+                    <tooltip>Allowed range is from 1 to 20</tooltip>
+                    <depends>
+                        <field id="enableCuttOff">1</field>
+                    </depends>
+                </field>
+                <field id="shipDays" translate="label" type="multiselect" sortOrder="7" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>What days do you ship orders?</label>
+                    <source_model>Eniture\UnishippersSmallPackageQuotes\Model\Source\orderShipDays</source_model>
+                    <validate>validate-select</validate>
+                    <depends>
+                        <field id="enableCuttOff">1</field>
+                    </depends>
+                </field>
+                <field id="transitDaysNumber" translate="label" type="text" sortOrder="8" showInDefault="2" showInWebsite="1" showInStore="1">
+                    <label>Enter the number of transit days to restrict ground service to. Leave blank to disable this feature.</label>
+                    <validate>validate-number validate-length maximum-length-2 validate-not-negative-number validate-unishipperssm-integer</validate>
+                </field>
+                <field id="transitDaysRestrictionBy" translate="label" type="radios" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Restrict By</label>
+                    <source_model>Eniture\UnishippersSmallPackageQuotes\Model\Source\TransitDaysRestrictionBy</source_model>
+                </field>
+                <field id="residentialDlvry" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Always Quote Residential Delivery</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Residential Delivery.]]></comment>
+                </field>
+                <field id="residentialAddressDetect" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Auto detect residential addresses</label>
+                    <frontend_model>Eniture\UnishippersSmallPackageQuotes\Block\System\Config\ResidentialAddressDetection</frontend_model>
+                </field>
+                <field id="boxSizesQuoteStng" translate="label" type="text" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use My Standard Box Sizes</label>
+                    <frontend_model>Eniture\UnishippersSmallPackageQuotes\Block\System\Config\BoxSizes</frontend_model>
+                </field>
+                <field id="onlyGndService" translate="label" type="select" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Only quote ground service for hazardous materials shipments</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="gndHzrdousFee" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ground Hazardous Material Fee</label>
+                    <validate>validate-number validate-length maximum-length-7 validate-unishipperssm-decimal-limit-2</validate>
+                    <comment><![CDATA[Enter an amount, e.g 20. or Leave blank to disable.]]></comment>
+                </field>
+                <field id="airHzrdousFee" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Air Hazardous Material Fee</label>
+                    <validate>validate-number validate-length maximum-length-7 validate-unishipperssm-decimal-limit-2</validate>
+                    <comment><![CDATA[Enter an amount, e.g 20. or Leave blank to disable.]]></comment>
+                </field>
+                <field id="hndlngFee" translate="label" type="text" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Handling Fee / Markup</label>
+                    <validate>validate-number validate-length maximum-length-7 validate-unishipperssm-decimal-limit-2</validate>
+                </field>
+                <field id="symbolicHndlngFee" translate="label" type="select" sortOrder="17" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Fee Type</label>
+                    <source_model>Eniture\UnishippersSmallPackageQuotes\Model\Source\HandlingFee</source_model>
+                    <comment><![CDATA[Amount excluding tax. Enter an amount, e.g 3.75, or a percentage, e.g, 5%. Leave blank to disable.]]></comment>
+                </field>
+            </group>
+        </section>
+
+        <section id="UnishippersSmBoxSizesTab" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Standard Box Sizes</label>
+            <tab>UnishippersSmallPackageQuotes</tab>
+            <resource>Eniture_UnishippersSmallPackageQuotes::acl</resource>
+            <group id="fourth" translate="label" type="text" sortOrder="26" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Standard Box Sizes</label>
+                <field id="unishippersSmpkgBoxSizes" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Eniture\UnishippersSmallPackageQuotes\Block\System\Config\BoxSizesTab</frontend_model>
+                </field>
+            </group>
+        </section>
+
+        <section id="UnishippersSmUserGuide" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>User Guide</label>
+            <tab>UnishippersSmallPackageQuotes</tab>
+            <resource>Eniture_UnishippersSmallPackageQuotes::acl</resource>
+            <group id="fifth" translate="label" type="text" sortOrder="26" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>User Guide</label>
+                <field id="unishippersSmpkgUserGuide" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Eniture\UnishippersSmallPackageQuotes\Block\System\Config\UserGuide</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
